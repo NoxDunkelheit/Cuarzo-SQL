@@ -22,7 +22,7 @@ public class CuarzoSQL {//DECLARACION DE LA CLASE
 	{}
 	/*A CONTINUACION SE ESTA DECLARANDO EL DRIVER DE CONEXION CON MICROSOFT ACCESS*/
 	public boolean CONECTAR_DATABASE() {
-	   String nombreBasedeDatosAccess="Reservaciones-hotel.mdb";
+	   String nombreBasedeDatosAccess="BasedeDatos.mdb";
              //cuidado aca, la base de datos se encuentra aca, asi:
            String lugardelaBasedeDatos= System.getProperty("user.dir")+"\\base\\"+nombreBasedeDatosAccess;
      
@@ -37,7 +37,7 @@ public class CuarzoSQL {//DECLARACION DE LA CLASE
 	    return true;
 	}
 	//INSERT, UPDATE, DELETE
-        public void EJECUTAR_OPERACION_DMLSQL(String sql){
+        public void EJECUTAR_OPERACION_SQL(String sql){
             try{
             Statement stmt = conexion.createStatement();
             stmt.executeUpdate(sql);
@@ -57,7 +57,7 @@ public class CuarzoSQL {//DECLARACION DE LA CLASE
             }
         }
         //SELECT
-        public void EJECUTAR_OPERACION_DDLSQL(String sql){
+        public void EJECUTAR_OPERACION_SELECT(String sql){
     try
     {
       CONECTAR_DATABASE();
